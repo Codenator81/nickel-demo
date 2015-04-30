@@ -35,7 +35,7 @@ fn main() {
             "Hello world!"
         }
     });
-
+    // you can change 8080 to any port 
     server.listen("127.0.0.1:6767");
 }
 ```
@@ -87,17 +87,48 @@ fn tmpl_handler<'a> (_: &mut Request, res: Response<'a>) -> MiddlewareResult<'a>
 
 fn main() {
 ```
-I run again `cargo run`. Great I got my template rendered!
+Run `cargo run`. Great I got my template rendered!
 ###Step 3 : Router and server simple logs
-Now when locate to http://localhost:8080/<br>
+```rust
+fn main() {
+    let mut server = Nickel::new();
+
+    //middleware function logs each request to console
+    server.utilize(middleware! { |request|
+        println!("logging request: {:?}", request.origin.uri);
+    });
+
+    // start using router
+    let mut router = Nickel::router();
+
+    //works only on route http://localhost:8080
+    router.get("/", tmpl_handler);
+
+    server.utilize(router);
+    // you can change 8080 to any port 
+    server.listen("127.0.0.1:8080");
+}
+```
+There we add router and log messages from server.
+Now when run and locate to http://localhost:8080/ in browser 
 we cen see log messages in console:
 
     logging request: AbsolutePath("/")
 Good!
 ###Step 4 : header type for content
+Add new function for test how we can assign content type in header:
 ```rust
-    //res: Response
-    res.content_type(MediaType::Json);
+// this function add header to response for example now we add application/json
+fn content_type<'a>(_: &mut Request, mut res: Response<'a>) -> MiddlewareResult<'a> {
+        //MediaType can be any valid type for reference see https://github.com/nickel-org/nickel.rs/blob/master/src/mimes.rs#L47
+        res.content_type(MediaType::Json);
+        res.send( "{'foo':'bar'}")
+}
+```
+and after `router.get("/", tmpl_handler);` add:
+```rust
+    // go to http://localhost:8080/content-type to see this route in action
+    router.get("/content-type", content_type);
 ```
 
 <br>

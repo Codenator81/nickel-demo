@@ -9,11 +9,31 @@ Lets build Rust on web together!
 <br>
 This tutorial follow Rust beta release<br>
 ###First Step : Create minimal server
-When do `cargo run` locate to http://localhost:8080/<br>
-Got informative log message in console:
+in main.rs add
+```rust
+#[macro_use] 
+extern crate nickel;
 
+use nickel::Nickel;
+
+fn main() {
+    let mut server = Nickel::new();
+
+    server.utilize(router! {
+        get "**" => |_req, _res| {
+            "Hello world!"
+        }
+    });
+
+    server.listen("127.0.0.1:6767");
+}
+```
+When type in terminal/console `cargo run` and locate to http://localhost:8080/ in your browser. 
+After we got informative log message in console:
+```
     Listening on http://127.0.0.1:8080
     Ctrl-C to shutdown server
+```    
 ###Second Step : Add template
 You can see two variants there how call function<br>
 I add template to `app/views/index.tpl` in root of my program<br>

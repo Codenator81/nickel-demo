@@ -131,6 +131,7 @@ and after `router.get("/", tmpl_handler);` in main function add:
     router.get("/content-type", content_type);
 ```
 Content types available in nickel.rs you can check at [this link](https://github.com/nickel-org/nickel.rs/blob/master/src/mimes.rs#L47)
+In our code we add "Application/Json" content type. You can check it when run code and navigate in your browser to http://localhost:8080/content-type
 <br>
 <br>
 Contributors wanted!

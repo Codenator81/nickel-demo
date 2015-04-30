@@ -120,17 +120,17 @@ Add new function for test how we can assign content type in header:
 ```rust
 // this function add header to response for example now we add application/json
 fn content_type<'a>(_: &mut Request, mut res: Response<'a>) -> MiddlewareResult<'a> {
-        //MediaType can be any valid type for reference see https://github.com/nickel-org/nickel.rs/blob/master/src/mimes.rs#L47
+        //MediaType can be any valid type for reference see 
         res.content_type(MediaType::Json);
         res.send( "{'foo':'bar'}")
 }
 ```
-and after `router.get("/", tmpl_handler);` add:
+and after `router.get("/", tmpl_handler);` in main function add:
 ```rust
     // go to http://localhost:8080/content-type to see this route in action
     router.get("/content-type", content_type);
 ```
-
+Content types available in nickel.rs you can check at [this link](https://github.com/nickel-org/nickel.rs/blob/master/src/mimes.rs#L47)
 <br>
 <br>
 Contributors wanted!

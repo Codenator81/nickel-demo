@@ -1,8 +1,7 @@
 # nickel-demo
 Rust Beta 3 [![Build Status](https://travis-ci.org/Codenator81/nickel-demo.png?branch=master)](https://travis-ci.org/Codenator81/nickel-demo)
 ##Rust web lessons based on nickel.rs and Angular.js
-Just follow my commits <br>
-I try do every commits step by step where each compile<br>
+To follow in commits navigate to commit with prefix step in header
 <br>
 If you have questions or idea report issue please!<br>
 Lets build Rust on web together!
@@ -40,14 +39,14 @@ fn main() {
     server.listen("127.0.0.1:6767");
 }
 ```
-When type in terminal/console `cargo run` and locate to http://localhost:8080/ in your browser. 
+Then type in terminal/console `cargo run` and locate to http://localhost:8080/ in your browser. 
 After we got informative log message in console:
 ```
     Listening on http://127.0.0.1:8080
     Ctrl-C to shutdown server
 ```    
 ###Second Step : Add template
-Add template to `app/views/index.tpl` in root of my program:
+Add template to `app/views/index.tpl` in root of program:
 ```html
 <!DOCTYPE html>
 <html>
@@ -85,6 +84,8 @@ fn tmpl_handler<'a> (_: &mut Request, res: Response<'a>) -> MiddlewareResult<'a>
     data.insert("page_title", "lesson 2");
     res.render("app/views/index.tpl", &data)
 }
+
+fn main() {
 ```
 I run again `cargo run`. Great I got my template rendered!
 ###Step 3 : Router and server simple logs

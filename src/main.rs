@@ -3,6 +3,8 @@ extern crate nickel;
 
 use nickel::{Nickel, Request, Response, HttpRouter, MiddlewareResult, MediaType};
 
+use std::collections::HashMap;
+
 //there is another variant where don't need return MiddlewareResult
 // but then not so clean call in main function (in my opinion)
 // if you remove return value here

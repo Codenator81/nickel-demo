@@ -9,7 +9,19 @@ Lets build Rust on web together!
 <br>
 This tutorial follow Rust beta release<br>
 ###First Step : Create minimal server
-in main.rs add
+in Cargo.toml add:
+```toml
+[package]
+name = "you-app-name"
+version = "0.1.0"
+authors = ["your-name"]
+
+[dependencies.nickel]
+
+git = "https://github.com/nickel-org/nickel.rs.git"
+
+```
+in main.rs add:
 ```rust
 #[macro_use] 
 extern crate nickel;
@@ -35,8 +47,45 @@ After we got informative log message in console:
     Ctrl-C to shutdown server
 ```    
 ###Second Step : Add template
-You can see two variants there how call function<br>
-I add template to `app/views/index.tpl` in root of my program<br>
+Add template to `app/views/index.tpl` in root of my program:
+```html
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>{{ page_title }}</title>
+</head>
+<body>
+    <h1>
+        Hello {{ name }}!
+    </h1>
+</body>
+</html>
+```
+in main.rs replace:
+```rust
+    server.utilize(router! {
+        get "**" => |_req, _res| {
+            "Hello world!"
+        }
+    });
+```
+to:
+```rust
+server.get("/", tmpl_handler);
+```
+and add before main function:
+```rust
+fn tmpl_handler<'a> (_: &mut Request, res: Response<'a>) -> MiddlewareResult<'a> {
+    let mut data = HashMap::<&str, &str>::new();
+    // add data for render
+    // name = {{ name }} in template
+    // page_title = {{ page_title }}
+    data.insert("name", "Alex");// change "Alex" to your name )
+    data.insert("page_title", "lesson 2");
+    res.render("app/views/index.tpl", &data)
+}
+```
 I run again `cargo run`. Great I got my template rendered!
 ###Step 3 : Router and server simple logs
 Now when locate to http://localhost:8080/<br>

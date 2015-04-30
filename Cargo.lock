@@ -2,7 +2,10 @@
 name = "nickel-demo"
 version = "0.1.0"
 dependencies = [
+ "hyper 0.3.14 (registry+https://github.com/rust-lang/crates.io-index)",
  "nickel 0.2.1 (git+https://github.com/nickel-org/nickel.rs.git)",
+ "regex 0.1.30 (registry+https://github.com/rust-lang/crates.io-index)",
+ "rustc-serialize 0.3.14 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]

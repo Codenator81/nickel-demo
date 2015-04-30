@@ -22,8 +22,17 @@ fn tmpl_handler<'a> (_: &mut Request, res: Response<'a>) -> MiddlewareResult<'a>
 fn main() {
     let mut server = Nickel::new();
 
-    //works only on route http://localhost:8080
-    server.get("/", tmpl_handler);
+    //middleware function logs each request to console
+    server.utilize(middleware! { |request|
+        println!("logging request: {:?}", request.origin.uri);
+    });
 
+    // start using router
+    let mut router = Nickel::router();
+
+    //works only on route http://localhost:8080
+    router.get("/", tmpl_handler);
+
+    server.utilize(router);
     server.listen("127.0.0.1:8080");
 }

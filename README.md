@@ -162,11 +162,11 @@ On first line in our code we tell travis-c about our language and in line 2-3 we
  Now every time code deplojed to GitHub travis build our code and run test. <br>
  To show  [![Build Status](https://travis-ci.org/Codenator81/nickel-demo.png?branch=master)](https://travis-ci.org/Codenator81/nickel-demo) in your repo 
  write <br>`[![Build Status](https://travis-ci.org/Codenator81/nickel-demo.png?branch=master)](https://travis-ci.org/Codenator81/nickel-demo)`<br>
- Where:
- `[![Build Status](https://travis-ci.org/Codenator81/nickel-demo.png?branch=master)]` - show image from travis-c
+ Where:<br>
+ `[![Build Status](https://travis-ci.org/Codenator81/nickel-demo.png?branch=master)]` - show image from travis-c<br>
  `https://travis-ci.org` - link to travis-c<br>
- `Codenator81` - accaunt name on travis-c
- `nickel-demo.png?branch=master` - repo name with added .png at end and branch tested
+ `Codenator81` - accaunt name on travis-c<br>
+ `nickel-demo.png?branch=master` - repo name with added .png at end and branch tested<br>
  `(https://travis-ci.org/Codenator81/nickel-demo)` - link to travis
 <br>
 <br>

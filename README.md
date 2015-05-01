@@ -142,6 +142,31 @@ router.get("/content-type", middleware! { |request, mut response|
 ```
 Content types available in nickel.rs you can check at [this link](https://github.com/nickel-org/nickel.rs/blob/master/src/mimes.rs#L47)
 In our code we add "Application/Json" content type. You can check it when run code and navigate in your browser to http://localhost:8080/content-type
+###Step 5 : Test our code on travis-c
+So create file `.travis.yml` in root of your code and add:
+```yaml
+1    language: rust
+2    rust:
+3        - 1.0.0-beta.3
+4    os:
+5        - linux
+6    script:
+7      - cargo build -v
+8      - cargo test
+```
+Connect travis-c to your GitHub account very easy and if you before don`t try it now is time to do so.
+Travis run test on every commit to GitHub repo.<br> 
+On first line in our code we tell travis-c about our language and in line 2-3 we add language version he try to install. 
+ 4-5 is OS in which we test our code. In our example we use `Linux`. Lines 6-7 run `cargo build` and `cargo test`. 
+ At this time in our code no test so let start write same in next step!
+ Now every time code deplojed to GitHub travis build our code and run test. To show  [![Build Status](https://travis-ci.org/Codenator81/nickel-demo.png?branch=master)](https://travis-ci.org/Codenator81/nickel-demo) in your repo 
+ write `[![Build Status](https://travis-ci.org/Codenator81/nickel-demo.png?branch=master)](https://travis-ci.org/Codenator81/nickel-demo)`<br>
+ `[![Build Status](https://travis-ci.org/Codenator81/nickel-demo.png?branch=master)]` - show image from travis-c
+ `https://travis-ci.org` - link to travis-c<br>
+ `Codenator81` - accaunt name on travis-c
+ `nickel-demo.png?branch=master` - repo name with added .png at end and branch tested
+ `(https://travis-ci.org/Codenator81/nickel-demo)` - link to travis
+ 
 <br>
 <br>
 Contributors wanted!

@@ -130,6 +130,16 @@ and after `router.get("/", tmpl_handler);` in main function add:
     // go to http://localhost:8080/content-type to see this route in action
     router.get("/content-type", content_type);
 ```
+or another variant without function with macro `middleware!` :
+```rust
+let mut router = Nickel::router();
+
+// go to http://localhost:8080/content-type to see this route in action
+router.get("/content-type", middleware! { |request, mut response|
+    response.content_type(MediaType::Json);
+    "{'foo':'bar'}"
+});
+```
 Content types available in nickel.rs you can check at [this link](https://github.com/nickel-org/nickel.rs/blob/master/src/mimes.rs#L47)
 In our code we add "Application/Json" content type. You can check it when run code and navigate in your browser to http://localhost:8080/content-type
 <br>

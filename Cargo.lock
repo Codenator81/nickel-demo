@@ -12,10 +12,10 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "cookie"
-version = "0.1.19"
+version = "0.1.20"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "openssl 0.6.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "openssl 0.6.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "rustc-serialize 0.3.14 (registry+https://github.com/rust-lang/crates.io-index)",
  "time 0.1.25 (registry+https://github.com/rust-lang/crates.io-index)",
  "url 0.2.31 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -23,7 +23,7 @@ dependencies = [
 
 [[package]]
 name = "gcc"
-version = "0.3.4"
+version = "0.3.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
@@ -38,15 +38,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "hyper"
-version = "0.3.14"
+version = "0.3.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "cookie 0.1.19 (registry+https://github.com/rust-lang/crates.io-index)",
+ "cookie 0.1.20 (registry+https://github.com/rust-lang/crates.io-index)",
  "httparse 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.3.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "mime 0.0.10 (registry+https://github.com/rust-lang/crates.io-index)",
  "num_cpus 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)",
- "openssl 0.6.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "openssl 0.6.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "rustc-serialize 0.3.14 (registry+https://github.com/rust-lang/crates.io-index)",
  "time 0.1.25 (registry+https://github.com/rust-lang/crates.io-index)",
  "traitobject 0.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -106,10 +106,10 @@ dependencies = [
 [[package]]
 name = "nickel"
 version = "0.2.1"
-source = "git+https://github.com/nickel-org/nickel.rs.git#e8c74753ebe79a40b1828a712b27d37a489d948a"
+source = "git+https://github.com/nickel-org/nickel.rs.git#d611ac079dfe40e4dc168127e742a4ec1dc73505"
 dependencies = [
  "groupable 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "hyper 0.3.14 (registry+https://github.com/rust-lang/crates.io-index)",
+ "hyper 0.3.15 (registry+https://github.com/rust-lang/crates.io-index)",
  "lazy_static 0.1.10 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.3.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "mustache 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -131,21 +131,21 @@ dependencies = [
 
 [[package]]
 name = "openssl"
-version = "0.6.1"
+version = "0.6.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "bitflags 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "lazy_static 0.1.10 (registry+https://github.com/rust-lang/crates.io-index)",
  "libc 0.1.6 (registry+https://github.com/rust-lang/crates.io-index)",
- "openssl-sys 0.6.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "openssl-sys 0.6.2 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "openssl-sys"
-version = "0.6.1"
+version = "0.6.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "gcc 0.3.4 (registry+https://github.com/rust-lang/crates.io-index)",
+ "gcc 0.3.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "libc 0.1.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "libressl-pnacl-sys 2.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "pkg-config 0.3.3 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -203,7 +203,7 @@ name = "time"
 version = "0.1.25"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "gcc 0.3.4 (registry+https://github.com/rust-lang/crates.io-index)",
+ "gcc 0.3.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "libc 0.1.6 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 

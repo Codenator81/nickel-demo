@@ -156,17 +156,18 @@ So create file `.travis.yml` in root of your code and add:
 ```
 Connect travis-c to your GitHub account very easy and if you before don't try it now is time to do so.
 Travis run test on every commit to GitHub repo.<br> 
-On first line in our code we tell travis-c about our language and in line 2-3 we add language version he try to install. 
- 4-5 is OS in which we test our code. In our example we use `Linux`. Lines 6-7 run `cargo build` and `cargo test`. 
- At this time in our code no test so let start write same in next step!
- Now every time code deplojed to GitHub travis build our code and run test. To show  [![Build Status](https://travis-ci.org/Codenator81/nickel-demo.png?branch=master)](https://travis-ci.org/Codenator81/nickel-demo) in your repo 
- write `[![Build Status](https://travis-ci.org/Codenator81/nickel-demo.png?branch=master)](https://travis-ci.org/Codenator81/nickel-demo)`<br>
+On first line in our code we tell travis-c about our language and in line 2-3 we add language version he try to build. <br>
+ 4-5 is OS in which we test our code. In our example we use `Linux`. <br>
+ Lines 6-7 run `cargo build` and `cargo test`. <br>
+ Now every time code deplojed to GitHub travis build our code and run test. <br>
+ To show  [![Build Status](https://travis-ci.org/Codenator81/nickel-demo.png?branch=master)](https://travis-ci.org/Codenator81/nickel-demo) in your repo 
+ write <br>`[![Build Status](https://travis-ci.org/Codenator81/nickel-demo.png?branch=master)](https://travis-ci.org/Codenator81/nickel-demo)`<br>
+ Where:
  `[![Build Status](https://travis-ci.org/Codenator81/nickel-demo.png?branch=master)]` - show image from travis-c
  `https://travis-ci.org` - link to travis-c<br>
  `Codenator81` - accaunt name on travis-c
  `nickel-demo.png?branch=master` - repo name with added .png at end and branch tested
  `(https://travis-ci.org/Codenator81/nickel-demo)` - link to travis
- 
 <br>
 <br>
 Contributors wanted!

@@ -154,7 +154,7 @@ So create file `.travis.yml` in root of your code and add:
 7      - cargo build -v
 8      - cargo test
 ```
-Connect travis-c to your GitHub account very easy and if you before don`t try it now is time to do so.
+Connect travis-c to your GitHub account very easy and if you before don't try it now is time to do so.
 Travis run test on every commit to GitHub repo.<br> 
 On first line in our code we tell travis-c about our language and in line 2-3 we add language version he try to install. 
  4-5 is OS in which we test our code. In our example we use `Linux`. Lines 6-7 run `cargo build` and `cargo test`. 

@@ -167,7 +167,7 @@ On first line in our code we tell travis-c about our language and in line 2-3 we
  `https://travis-ci.org` - link to travis-c<br>
  `Codenator81` - accaunt name on travis-c<br>
  `nickel-demo.png?branch=master` - repo name with added .png at end and branch tested on<br>
- `(https://travis-ci.org/Codenator81/nickel-demo)` - link to travis
+ `(https://travis-ci.org/Codenator81/nickel-demo)` - link to travis<br>
  ###Step 6 : save data to Postgres 
   My Cargo.toml now look like this:
   ```toml

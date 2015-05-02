@@ -1,9 +1,8 @@
 [package]
 name = "nickel-demo"
-version = "0.1.0"
-authors = ["Codenator81"]
+version = "0.0.6"
 
-[dependencies.nickel]
-
-git = "https://github.com/nickel-org/nickel.rs.git"
+[dependencies]
+nickel = "*"
+postgres = "*"
 

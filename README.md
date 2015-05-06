@@ -36,7 +36,7 @@ fn main() {
         }
     });
     // you can change 8080 to any port 
-    server.listen("127.0.0.1:6767");
+    server.listen("127.0.0.1:8080");
 }
 ```
 Then type in terminal/console `cargo run` and locate to http://localhost:8080/ in your browser. 

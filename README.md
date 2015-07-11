@@ -121,7 +121,7 @@ Add new function for test how we can assign content type in header:
 // this function add header to response for example now we add application/json
 fn content_type<'a>(_: &mut Request, mut res: Response<'a>) -> MiddlewareResult<'a> {
         //MediaType can be any valid type for reference see 
-        res.content_type(MediaType::Json);
+        res.set(MediaType::Json);
         res.send( "{'foo':'bar'}")
 }
 ```
@@ -136,7 +136,7 @@ let mut router = Nickel::router();
 
 // go to http://localhost:8080/content-type to see this route in action
 router.get("/content-type", middleware! { |request, mut response|
-    response.content_type(MediaType::Json);
+    response.set(MediaType::Json);
     "{'foo':'bar'}"
 });
 ```

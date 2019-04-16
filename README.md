@@ -1,13 +1,13 @@
 # nickel-demo
 Rust Beta 3 [![Build Status](https://travis-ci.org/Codenator81/nickel-demo.png?branch=master)](https://travis-ci.org/Codenator81/nickel-demo)
-##Rust web lessons based on nickel.rs and Angular.js
+## Rust web lessons based on nickel.rs and Angular.js
 To follow in commits navigate to commit with prefix step in header
 <br>
 If you have questions or idea report issue please!<br>
 Lets build Rust on web together!
 <br>
 This tutorial follow Rust beta release<br>
-###First Step : Create minimal server
+### First Step : Create minimal server
 in Cargo.toml add:
 ```toml
 [package]
@@ -45,7 +45,7 @@ After we got informative log message in console:
     Listening on http://127.0.0.1:8080
     Ctrl-C to shutdown server
 ```    
-###Second Step : Add template
+### Second Step : Add template
 Add template to `app/views/index.tpl` in root of program:
 ```html
 <!DOCTYPE html>
@@ -88,7 +88,7 @@ fn tmpl_handler<'a> (_: &mut Request, res: Response<'a>) -> MiddlewareResult<'a>
 fn main() {
 ```
 Run `cargo run`. Great I got my template rendered!
-###Step 3 : Router and server simple logs
+### Step 3 : Router and server simple logs
 ```rust
 fn main() {
     let mut server = Nickel::new();
@@ -115,7 +115,7 @@ we cen see log messages in console:
 
     logging request: AbsolutePath("/")
 Good!
-###Step 4 : header type for content
+### Step 4 : header type for content
 Add new function for test how we can assign content type in header:
 ```rust
 // this function add header to response for example now we add application/json
@@ -142,7 +142,7 @@ router.get("/content-type", middleware! { |request, mut response|
 ```
 Content types available in nickel.rs you can check at [this link](https://github.com/nickel-org/nickel.rs/blob/master/src/mimes.rs#L47)
 In our code we add "Application/Json" content type. You can check it when run code and navigate in your browser to http://localhost:8080/content-type
-###Step 5 : Test our code on travis-c
+### Step 5 : Test our code on travis-c
 So create file `.travis.yml` in root of your code and add:
 ```yaml
 1    language: rust
@@ -168,7 +168,7 @@ On first line in our code we tell travis-c about our language and in line 2-3 we
  `Codenator81` - accaunt name on travis-c<br>
  `nickel-demo.png?branch=master` - repo name with added .png at end and branch tested on<br>
  `(https://travis-ci.org/Codenator81/nickel-demo)` - link to travis<br>
-###Step 6 : save data to Postgres 
+### Step 6 : save data to Postgres 
   My Cargo.toml now look like this:
   ```toml
   [package]
@@ -285,10 +285,11 @@ fn main() {
 Connect to DB `Connection::connect("postgres://root:root@localhost/json-test", &SslMode::None).unwrap();`<br>
 where `"postgres://user:pass@localhost/db_name"`
 more details in code comment. 
+
 For base postgres usage in Rust look to [link](https://github.com/sfackler/rust-postgres)
-so now when we navigate to //http://localhost:8080/test-save-db we save data to DB an //http://localhost:8080/get-blog/1 retrieve data from DB by id<br>
-Now we ready to start build blog/wiki in Rust! <br>
-Next we try send post from form to server and save it.
-<br>
-<br>
+so now when we navigate to //http://localhost:8080/test-save-db we save data to DB an //http://localhost:8080/get-blog/1 retrieve data 
+from DB by id. 
+
+Now we ready to start build blog/wiki in Rust!  
+Next we try send post from form to server and save it.  
 Contributors wanted!
